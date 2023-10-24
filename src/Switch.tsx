@@ -16,10 +16,10 @@ import Animated, {
 import { Spacer } from "./Spacer";
 
 const sizes = {
-    circle: 28,
-    padding: 2,
-    width: 70,
-}
+  circle: 28,
+  padding: 2,
+  width: 70,
+};
 
 const CIRCLE_TO_BORDER_SPACING = 2;
 
@@ -29,23 +29,23 @@ const createSwitchStyle = () =>
   ({
     off: {
       background: {
-        color: 'grey',
+        color: "grey",
       },
       foreground: {
-        color: 'white',
+        color: "white",
       },
     },
     on: {
       background: {
-        color: 'green',
+        color: "green",
       },
       foreground: {
-        color: 'white',
+        color: "white",
       },
     },
-    loaderColor: 'white',
+    loaderColor: "white",
     disabledOpacity: 0.5,
-  } as const);
+  }) as const;
 
 interface Props {
   color?: "primary" | "negative";
@@ -85,7 +85,7 @@ const ToggleComponent = ({
     const backgroundColor = interpolateColor(
       transitionProgress.value,
       [0, 1],
-      [onBackgroundColor, offBackgroundColor]
+      [onBackgroundColor, offBackgroundColor],
     );
     return { backgroundColor };
   });
@@ -94,7 +94,7 @@ const ToggleComponent = ({
     const backgroundColor = interpolateColor(
       transitionProgress.value,
       [0, 1],
-      [offForegroundColor, onForegroundColor]
+      [offForegroundColor, onForegroundColor],
     );
     return { backgroundColor };
   });
@@ -161,11 +161,8 @@ const getAccessibilityState = ({
 
 const Background = styled(Animated.View)(({ theme }) => ({
   width: sizes.width, // Fixed size because the texts for the 2 positions are not the same size
-  height:
-    sizes.circle + CIRCLE_TO_BORDER_SPACING * 2,
-  borderRadius:
-    (sizes.circle + CIRCLE_TO_BORDER_SPACING * 2) /
-    2,
+  height: sizes.circle + CIRCLE_TO_BORDER_SPACING * 2,
+  borderRadius: (sizes.circle + CIRCLE_TO_BORDER_SPACING * 2) / 2,
   justifyContent: "center",
 }));
 
@@ -182,4 +179,3 @@ const IconCircle = styled(Animated.View)(({ theme }) => ({
   alignItems: "center",
   justifyContent: "center",
 }));
-

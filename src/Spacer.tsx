@@ -39,10 +39,7 @@ const GridSpacer = styled(View, {
   direction: GridSpacerDirection;
   gap: number;
 }>(({ direction, gap, theme }) => ({
-  ...(direction === "vertical"
-    ? { height: gap }
-    : { width: gap }),
+  ...(direction === "vertical" ? { height: gap } : { width: gap }),
 }));
 
 export const Spacer = React.memo(SpacerToMemoize);
-
